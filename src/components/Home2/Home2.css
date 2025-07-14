@@ -1,0 +1,77 @@
+.home2 {
+  margin-top: 8rem;
+  text-align: center;
+}
+
+.home2-title {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+.topics-container {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.topics-container > div {
+  width: 100%;
+  max-width: 32rem;
+  height: 20rem;
+}
+
+.topics-container > div:has(h4) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.topics-container h4 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.topics-container p {
+  color: var(--dark);
+  font-weight: 300;
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
+
+.topics-container > div:has(img),
+.topics-container > div:has(img) + div:has(h4) {
+  text-align: right;
+}
+
+.topics-container > div:has(img) + div:has(img),
+.topics-container > div:has(h4) {
+  text-align: left;
+}
+
+@media (width < 992px) {
+  .topics-container {
+    justify-content: center;
+    grid-template-columns: repeat(2, 20rem);
+  }
+}
+
+@media (width < 768px) {
+  .topics-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .topics-container > div {
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .topics-container .advancing-technology {
+    display: none;
+  }
+}

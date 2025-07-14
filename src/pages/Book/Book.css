@@ -1,0 +1,163 @@
+.book-anchors {
+  background-color: var(--blue);
+  padding: .5rem .625rem;
+
+  font-size: .8rem;
+  border-radius: .25rem;
+  transition: background-color .1s, box-shadow .25s;
+}
+
+.book-anchors:hover {
+  background-color: #599bc2;
+}
+
+.book-anchors:active {
+  background-color: var(--dark-blue);
+}
+
+.book-anchors:focus {
+  outline: none;
+  box-shadow: 0 0 0 .25rem var(--light-blue);
+}
+
+.root-book {
+  display: flex;
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-book {
+  width: 80rem;
+  height: 100vh;
+  padding: 0 4rem;
+}
+
+.book {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.book-card {
+  background-color: white;
+  filter: drop-shadow(.25rem .25rem 0 #00000040);
+  border-radius: .25rem;
+
+  width: 26rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.book-card-1 {
+  text-align: center;
+  gap: 1rem;
+}
+
+.book-card-1 .card-title {
+  margin-top: 2rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.book-card-1 > img {
+  margin-top: 1.25rem;
+  max-width: 8rem;
+}
+
+.book-card-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.book-card-2 .rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: -0.3125rem;
+}
+
+.book-aside {
+  background-color: white;
+  filter: drop-shadow(.25rem .25rem 0 #00000040);
+  border-radius: .25rem;
+
+  width: 48rem;
+  height: fit-content;
+  padding: 1.5rem;
+}
+
+.book-aside-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.book-aside-1 > .aside-title {
+  font-weight: 400;
+}
+
+.book-aside-1 > .book-description {
+  font-weight: 300;
+  font-size: 0.925rem;
+  text-align: justify;
+}
+
+.book-links {
+  margin-top: 2rem;
+  width: 100%;
+
+  display: flex;
+  justify-content: right;
+  gap: 1.25rem;
+}
+
+@media (width < 1200px) {
+  .main-book {
+    width: 64rem;
+  }
+}
+
+@media (width < 992px) {
+  .main-book {
+    width: 52rem;
+  }
+
+  .book {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .book > * {
+    width: 100%;
+  }
+
+  .book-card {
+    border-radius: .25rem .25rem 0 0;
+    filter: none;
+  }
+
+  .book-aside {
+    border-radius: 0 0 .25rem .25rem;
+    filter: none;
+  }
+}
+
+@media (width < 768px) {
+  .main-book {
+    width: 40rem;
+  }
+}
+
+@media (width < 576px) {
+  .book-links {
+    justify-content: center;
+  }
+}
