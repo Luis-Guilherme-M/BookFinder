@@ -23,14 +23,15 @@ const Search = () => {
 
   const [search, setSearch] = useState<string>('')
   const [data, setData] = useState<Book[]>()
-
+  
+  const apiKey = import.meta.env.VITE_API_KEY
   const searchBook = (evt: React.KeyboardEvent | React.MouseEvent) => {
     if (!search.trim()) return
 
     if (evt.type === 'click' || evt.type === 'keydown') {
       if ('key' in evt) { if (evt.key !== 'Enter' ) return }
       setData([])
-      
+
       const queries: string[] = [
         `${search}`,
         `inauthor:${search}`,
@@ -38,7 +39,7 @@ const Search = () => {
       ]
       
       queries.forEach(query => {
-        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyDVy5t07iRZMhnMb6xPDdTXNOfdiHWv-9w`)
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}`)
         .then(res => {
           const uniqueBooks = new Map<string, Book>()
 
